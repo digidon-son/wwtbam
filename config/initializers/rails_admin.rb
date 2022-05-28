@@ -1,4 +1,5 @@
 RailsAdmin.config do |config|
+  config.asset_source = :sprockets
 
   ### Popular gems integration
 
@@ -15,7 +16,7 @@ RailsAdmin.config do |config|
     end
   end
 
-  config.included_models = ['Question', 'Game', 'User']
+  config.included_models = %w[Question Game User]
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
   config.actions do

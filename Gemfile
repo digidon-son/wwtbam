@@ -12,6 +12,7 @@ gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
 gem 'rails_admin' # Удобная админка для управления любыми сущностями
 gem 'rails-i18n', '~> 7.0.0'
 gem 'russian'
+gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'twitter-bootstrap-rails'
 gem 'uglifier'
