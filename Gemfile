@@ -20,7 +20,7 @@ group :development, :test do
   gem 'byebug'
   gem 'factory_bot_rails'
   gem 'launchy' # Гем, который позволяет смотреть, что видит capybara
-  gem 'rspec-rails', '~> 6.0.0'
+  gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'sqlite3', '~> 1.4'
 end

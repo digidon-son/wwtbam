@@ -1,9 +1,9 @@
 # (c) goodprogrammer.ru
 # Объявление фабрики для создания нужных в тестах объектов
 # см. другие примеры на
-# http://www.rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md
+# http://www.rubydoc.info/gems/factory_bot/file/GETTING_STARTED.md
 
-FactoryGirl.define do
+FactoryBot.define do
   # фабрика, создающая юзеров
   factory :user do
     # генерим рандомное имя
