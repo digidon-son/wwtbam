@@ -2,7 +2,7 @@
 
 # Хелпер вывода флэш сообщений
 module BootstrapFlashHelper
-  ALERT_TYPES = %i[success info warning danger alert]
+  ALERT_TYPES = %i[success info warning danger alert].freeze
 
   def bootstrap_flash
     flash_messages = []
