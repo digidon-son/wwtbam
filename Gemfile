@@ -12,12 +12,13 @@ gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
 gem 'rails_admin' # Удобная админка для управления любыми сущностями
 gem 'rails-i18n', '~> 7.0.0'
 gem 'russian'
+gem 'sprockets-rails'
 gem 'twitter-bootstrap-rails'
 gem 'uglifier'
 
 group :development, :test do
-  gem 'capybara' # Гем, который использует rspec, чтобы смотреть наш сайт
   gem 'byebug'
+  gem 'capybara' # Гем, который использует rspec, чтобы смотреть наш сайт
   gem 'factory_bot_rails'
   gem 'launchy' # Гем, который позволяет смотреть, что видит capybara
   gem 'rspec-rails'
@@ -26,8 +27,8 @@ group :development, :test do
 end
 
 group :production do
+  gem 'pg'
   # гем, улучшающий вывод логов на Heroku
   # https://devcenter.heroku.com/articles/getting-started-with-rails4#heroku-gems
   gem 'rails_12factor'
-  gem 'pg'
 end
