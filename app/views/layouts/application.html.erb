@@ -29,7 +29,6 @@
   <!-- Size should be 32 x 32 pixels -->
   <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-  <%= javascript_include_tag 'application' %>
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
   <!--[if lt IE 9]>
@@ -41,16 +40,16 @@
 </head>
 <body>
 
-<div class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-static-top bg-info bg-gradient">
   <div class="container">
     <%= link_to 'Billionaire', root_path, class: 'navbar-brand' %>
     <% if user_signed_in? %>
-      <div class="navbar-form navbar-right">
+      <div class="navbar-form navbar-right d-flex">
 
         <% if current_user.is_admin? %>
           <%# Ссылка на админку %>
-          <%= link_to 'Админка', rails_admin_path, class: 'btn navbar-btn btn-danger btn-xs' %>
-          <%= link_to 'Залить новые вопросы', new_questions_path, class: 'btn navbar-btn btn-warning btn-xs' %>
+          <%= link_to 'Админка', rails_admin_path, class: 'btn navbar-btn btn-danger' %>
+          <%= link_to 'Залить новые вопросы', new_questions_path, class: 'btn navbar-btn btn-warning' %>
         <% end %>
 
 
@@ -58,8 +57,8 @@
                     user_path(current_user),
                     class: 'btn navbar-btn'
         %>
-        <%= link_to 'Новая игра', games_path, method: :post, class: 'btn navbar-btn btn-success btn-xs' %>
-        <%= link_to 'Выйти', destroy_user_session_path, method: :delete, class: 'btn btn-info btn-xs navbar-btn' %>
+        <%= button_to 'Новая игра', games_path, method: :post, class: 'btn navbar-btn btn-success me-2' %>
+        <%= button_to 'Выйти', destroy_user_session_path, method: :delete, class: 'btn btn-secondary navbar-btn' %>
       </div>
     <% else %>
       <div class="navbar-form navbar-right">
@@ -68,7 +67,7 @@
       </div>
     <% end %>
   </div>
-</div>
+</nav>
 
 <div class="container">
   <%= render 'partials/flash_message' %>
