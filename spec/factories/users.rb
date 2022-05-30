@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # (c) goodprogrammer.ru
 # Объявление фабрики для создания нужных в тестах объектов
 # см. другие примеры на
