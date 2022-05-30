@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # (c) goodprogrammer.ru
 
 require 'rails_helper'
@@ -11,7 +13,7 @@ RSpec.describe Game, type: :model do
   let(:user) { FactoryBot.create(:user) }
 
   # игра с прописанными игровыми вопросами
-  let(:game_w_questions) { FactoryBot.create(:game_with_questions, user: user) }
+  let(:game_w_questions) { FactoryBot.create(:game_with_questions, user:) }
 
   # Группа тестов на работу фабрики создания новых игр
   context 'Game Factory' do
@@ -24,8 +26,8 @@ RSpec.describe Game, type: :model do
       # создaли игру, обернули в блок, на который накладываем проверки
       expect {
         game = Game.create_game_for_user!(user)
-      }.to change(Game, :count).by(1).and(# проверка: Game.count изменился на 1 (создали в базе 1 игру)
-        change(GameQuestion, :count).by(15).and(# GameQuestion.count +15
+      }.to change(Game, :count).by(1).and( # проверка: Game.count изменился на 1 (создали в базе 1 игру)
+        change(GameQuestion, :count).by(15).and( # GameQuestion.count +15
           change(Question, :count).by(0) # Game.count не должен измениться
         )
       )
@@ -38,10 +40,8 @@ RSpec.describe Game, type: :model do
     end
   end
 
-
   # тесты на основную игровую логику
   context 'game mechanics' do
-
     # правильный ответ должен продолжать игру
     it 'answer correct continues game' do
       # текущий уровень игры и статус
