@@ -7,11 +7,11 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
-# Add additional requires below this line. Rails is not loaded until this point!
 
+# Специальные «матчеры» — методы, удобные для тестирования валидаций
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
-    with.test_framework :rpsec
+    with.test_framework :rspec
     with.library :rails
   end
 end
@@ -32,13 +32,6 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
-
-  # Подключаем девайзовые классы для использования в тестах
-  # https://github.com/plataformatec/devise#test-helpers
-  # https://github.com/plataformatec/devise/issues/4133
-
-  config.include Devise::TestHelpers, type: :controller
-  config.include Devise::TestHelpers, type: :view
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false

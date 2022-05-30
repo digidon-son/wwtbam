@@ -22,6 +22,10 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'uglifier'
 
+group :development do
+  gem 'web-console'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'capybara' # Гем, который использует rspec, чтобы смотреть наш сайт
